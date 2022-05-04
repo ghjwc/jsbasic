@@ -1,0 +1,198 @@
+<!-- 자바스크립트=js
+000.js
+js로 할 수 있는 것이 굉장히 많습니다.
+웹 프론트엔드-순수 js, 000.js, 앵귤러, 리액트, 뷰,
+웹 백엔드 node.js
+(js를 알면 프론트엔드와 백엔드 작업이 가능)
+머신러닝
+앱 개발
+.....etc -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>javascript</h1>
+</body>
+</html>
+
+<script>
+    // alert("반갑습니다."); > 알림창
+    // var name = prompt("이름을 입력해주세요."); > 입력창
+    // console.log(name); > 데이터를 console에 나타내는 함수
+    // confirm("정말 로그인 하실 건가요?"); > 확인창
+
+    // var cf = confirm("정말 로그인 하실 건가요?");
+    // console.log(cf);
+
+    // 변수는 컴퓨터 메모리에 주소를 획득하고 그 자리에 데이터를 넣어줌
+    var number = 40;
+    // console.log(number + 2);
+    // console.log(number - 2);
+
+    var a = "hello";
+    var b = "world";
+    // console.log(a+b);
+
+    // const: 상수값(값이 변하지 않음)
+    // let: 변수(값이 변함)
+
+    let c = "js";
+    console.log(c);
+    c="css";
+    console.log(c);
+
+    const d = "html";
+    console.log(d);
+    // d = "bs";
+    // console.log(d);
+
+    const o = "one";
+    const t = "two";
+    const th = "three";
+    const f = "four";
+    const fi = "five";
+
+    // 배열은 index와 값이 존재한다.
+    let myarr = [o , t, th, f, fi];
+    console.log (myarr);
+    console.log ("배열의 길이:" + myarr.length);
+    // [] 안에 있는 숫자는 index
+    // 배열의 첫 번째 요소는 1이 아닌 ***0***이다.
+    console.log(myarr [0], myarr[1], myarr[4]);
+
+    // 배열 값을 출력, 추가, 수정, 삭제 가능
+    // 출력: 배열 이름[index];
+    myarr[0];
+    // 추가: 배열 이름.push("넣을 값");
+    myarr.push("six");
+    console.log(myarr);
+    // 수정: 배열 이름[index] = "수정할 값";
+    myarr[0] = "zero";
+    console.log(myarr);
+    // 삭제: delete 배열 이름[index];
+    delete myarr[0];
+    console.log(myarr);
+
+    // .pop(); 제일 마지막 요소를 삭제
+    myarr.pop();
+    console.log(myarr);
+
+    // .splice(n,n); 영역을 선택해서 삭제
+    myarr.splice(0,1);
+    console.log(myarr);
+
+    // 객체는 key와 value로 이루어져있다.
+    // 형태 {key : value}
+    let myinfo = {
+        "name" : "ks",
+        "age" : "939",
+        "loca" : "busan"
+    }
+    console.log(typeof(myinfo));
+    // 생성create, 출력read, 수정update, 삭제delete 가능
+    // 줄여서 crud = 데이터 관리의 모든 것
+    console.log(myinfo["name"]);
+    myinfo["height"] = "180";
+    console.log(myinfo); //추가
+    myinfo["height"] = "170";
+    console.log(myinfo); //수정
+    delete myinfo["height"];
+    console.log(myinfo);
+
+    //js에서 제공하는 기본 함수
+    // alert() prompt() confirm() console.log()
+    // y = f(x) = x + 1
+    // x : 인자
+    // y :출력
+
+    // 함수의 정의
+    // function 함수이름(인자값) {}
+    function add(a, b) {
+        return a + b;
+    }
+    function minus(a, b) {
+        return a - b;
+    }
+    function div(a, b) {
+        return a / b;
+    }
+    y = add(10, 20);
+    console.log(y);
+
+    // 불린: 참과 거짓을 판별
+    console.log(10 < 20); //true
+    console.log(10 > 20); //false
+    console.log(true) // true
+
+    // 제어문 (문자열 비었거나(공백, null) 0일 경우 false로 판단)
+    // 값이 있으면 true로 판별. ("거짓"이라는 텍스트를 넣어도 true 산출됨)
+    if (10 > 5) {
+        console.log("true")
+    } else {
+        console.log("false")
+    }
+
+    if (10 < 5) {
+        console.log("true")
+    } else {
+        console.log("false")
+    }
+
+    if ("효성" == "효상") {
+        console.log("참")
+    } else {
+        console.log("거짓")
+    }
+    
+    // 조건이 맞을 때까지(충족) 반복
+    // 반복 횟수가 정해져있다
+    // for(변수선언, 조건, 변수의 증가)
+    for(var i=0; i<10; i++) {
+        console.log(i);
+    }
+    // for(var i=0; i<myarr.length; i++) {
+    //     console.log(myarr[i]);
+    // }
+    for(var i in myarr) {
+        console.log(myarr[i])
+    }
+    for(var key in myinfo) {
+        console.log(key + ":" + myinfo[key])
+    }
+
+
+    // 이중 for문을 이용한 구구단
+    for(var i=2; i<10; i++) {
+        console.log("---" + i + "단" + "---");
+        for(var j=1; j<10; j++) {
+            console.log(i + "x" + j + "=" + i*j)
+        }
+    }
+
+    // while문
+    // 조건이 맞을 때까지(충족) 반복
+    // 반복 횟수가 정해져있지 않다.
+    start = 0;
+    while (true) {
+        test();
+        console.log(start + "번째 while문 실행");
+        // start를 1씩 증가
+        start = start + 1;
+        // start가 10보다 크다면 break(정지)
+        if(start > 10) {
+        break;
+        }
+    }
+
+
+    function test() {
+        console.log(start + "번째 while문 실행!!");
+    }
+
+</script>
